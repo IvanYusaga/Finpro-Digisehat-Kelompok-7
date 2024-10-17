@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.content-area {
+    margin-left: 220px;
+    padding-top: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for transform and shadow */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up the card slightly */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        height: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .content-area {
+        margin-left: 0;
+    }
+}
