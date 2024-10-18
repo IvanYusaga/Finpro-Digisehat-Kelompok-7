@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Set karakter encoding ke UTF-8 untuk mendukung berbagai jenis karakter -->
+    <meta charset="UTF-8" />
+    
+    <!-- Mengatur tampilan responsif sesuai dengan ukuran layar perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Judul halaman -->
+    <title>Home</title>
+
+    <!-- Link ke Font Awesome untuk ikon-ikon yang digunakan dalam website -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Link ke Swiper.js untuk slider atau carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Link ke Bootstrap untuk memanfaatkan framework CSS yang mendukung responsifitas dan styling -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+
+    <!-- Link ke CSS kustom untuk styling halaman Open Trip Labuan Bajo -->
+    <link rel="stylesheet" href="../css/styleotlb.css" />
+
+    <!-- Link ke CSS untuk animasi loading -->
+    <link rel="stylesheet" href="../css/loading.css" />
+
+    <!-- Preconnect ke Google Fonts untuk mempercepat pemuatan font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Import Google Fonts: Montserrat dan MuseoModerno -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styling kustom untuk efek hover pada elemen daftar populer -->
+    <!-- <style>
+      .popular-list .mt-4 a:hover {
+        /* Warna teks dihilangkan karena dikomentari */
+        /* color: #fff; */
+        box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.4); /* Efek bayangan saat hover */
+      }
+    </style> -->
+</head>
+
+  <body>
+<!-- Loading Section Start -->
+    <!--
+    Div ini merupakan pembungkus utama untuk seluruh elemen loader atau pemuatan halaman.
+    Ini digunakan untuk menampung komponen yang terkait dengan tampilan loading di halaman.
+-->
+  <div class="pro-loading-wrapper">
+
+      <!--
+          Div ini adalah kontainer utama untuk elemen loader.
+          Semua elemen yang terkait dengan animasi loading akan berada di dalam kontainer ini.
+      -->
+      <div class="pro-loader-container">
+
+          <!--
+              Elemen ini merupakan bagian dari animasi loading.
+              Tiga div ini berfungsi untuk membuat tiga cincin yang akan berputar atau memberi efek animasi saat halaman dimuat.
+              Setiap 'pro-loader-ring' dapat memiliki animasi rotasi yang membuatnya tampak seperti bergerak.
+          -->
+          <div class="pro-loader-ring"></div>
+          <div class="pro-loader-ring"></div>
+          <div class="pro-loader-ring"></div>
+
+          <!--
+              Elemen ini digunakan untuk menampilkan teks "Loading..." di bawah animasi loader.
+              Ini memberikan konteks visual kepada pengguna bahwa konten sedang dalam proses pemuatan.
+          -->
+          <span class="pro-loader-text">Loading...</span>
+      </div>
+  </div>
+      <!-- Konten Utama -->
+  <div id="main-content" style="display:none;"></div>
+<!-- Loading Section End -->
+
+<!-- Header Section Start -->
+    <!-- 
+      Elemen <header> ini berfungsi sebagai bagian header dari halaman web, yang biasanya berada di bagian atas halaman.
+      Header ini berisi logo, judul situs, menu navigasi, dan ikon untuk memicu menu responsif.
+  -->
+  <header class="header">
+
+      <!--
+          Link ini mengarahkan pengguna ke halaman beranda (dalam hal ini "#" artinya tetap di halaman yang sama).
+          Di dalam link ini terdapat logo dan judul situs. Keduanya ditampilkan sebagai satu kesatuan untuk branding.
+      -->
+      <a href="#" class="logo">
+          <!--
+              Gambar logo situs yang akan ditampilkan di bagian kiri atas header.
+              'src' mengarah ke gambar logo yang disimpan di folder "images".
+          -->
+          <img src="../images/logolabuanbajo.png" alt="" />
+
+          <!--
+              Judul situs "Labuan Bajo" dengan tambahan elemen <span> untuk memberikan gaya berbeda pada teks "tour".
+              Teks ini menampilkan branding untuk situs yang berfokus pada tur Labuan Bajo.
+          -->
+          <h1>Labuan Bajo <span>tour</span></h1>
+      </a>
+
+      <!--
+          Elemen <nav> ini berfungsi sebagai navigasi utama situs.
+          Terdapat beberapa link yang mengarahkan pengguna ke berbagai halaman atau bagian dalam situs.
+      -->
+      <nav class="navbar">
+
+          <!--
+              Elemen ini adalah ikon 'close' yang digunakan untuk menutup menu navigasi pada tampilan mobile.
+              'fas fa-times' adalah kelas dari Font Awesome yang akan menampilkan ikon "X" untuk menutup menu.
+          -->
+          <div id="nav-close" class="fas fa-times"></div>
+
+          <!--
+              Link yang mengarahkan pengguna ke bagian halaman dengan ID "home".
+          -->
+          <a href="#home">Home</a>
+
+          <!--
+              Link yang mengarahkan pengguna ke halaman "Open Trip Labuan Bajo".
+          -->
+          <a href="opentrip.html">Open Trip Labuan Bajo</a>
+
+          <!--
+              Link yang mengarahkan pengguna ke halaman "Sewa Speed Boat".
+          -->
+          <a href="sewaspeedboat.html">Sewa Speed Boat</a>
+
+          <!--
+              Link yang mengarahkan pengguna ke halaman kumpulan artikel atau blog.
+          -->
+          <a href="blog.html">Kumpulan Artikel</a>
+      </nav>
+
+      <!--
+          Bagian ini berisi ikon-ikon yang terkait dengan fungsionalitas lainnya, seperti membuka menu pada tampilan mobile.
+          'fas fa-bars' adalah kelas dari Font Awesome untuk menampilkan ikon menu berupa tiga garis horizontal.
+      -->
+      <div class="icons">
+          <!--
+              Ikon menu (burger icon) yang digunakan untuk membuka menu navigasi pada tampilan mobile.
+              Ketika pengguna mengklik ikon ini, menu navigasi akan muncul.
+          -->
+          <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+  </header>
+<!-- Header Section end -->
+
+<!-- home section Start -->
+  <!--
+      Bagian ini adalah elemen <section> dengan kelas "home" dan ID "home".
+      Ini berfungsi sebagai bagian utama (hero section) dari halaman beranda yang menampilkan slider gambar dengan konten informatif.
+  -->
+  <section class="home" id="home">
+      
+      <!--
+          Div ini merupakan kontainer utama untuk slider yang dibuat menggunakan pustaka Swiper.
+          Slider ini memungkinkan pengguna untuk melihat beberapa konten dengan gambar latar belakang yang berbeda.
+      -->
+      <div class="swiper home-slider">
+          
+          <!--
+              Elemen <div> dengan kelas "swiper-wrapper" berfungsi sebagai kontainer untuk elemen-elemen slide di dalamnya.
+          -->
+          <div class="swiper-wrapper">
+              
+              <!--
+                  Elemen <div> ini adalah satu slide pada slider.
+                  Setiap slide memiliki konten yang berbeda, dan slide ini menggunakan gambar latar belakang "labuanbajo.jpg".
+              -->
+              <div class="swiper-slide">
+                  <div class="box" style="background: url(../images/labuanbajo.jpg) no-repeat">
+                      
+                      <!--
+                          Div ini berisi konten informatif yang tampil di atas slide.
+                          Ada teks yang menonjolkan konsep "Healing" dan informasi tentang Kota Labuan Bajo.
+                      -->
+                      <div class="content">
+                          <span>Healing Untuk</span>
+                          <h3>Kota Labuan Bajo</h3>
+                          <p>
+                              Labuan Bajo dikenal dengan berbagai destinasi wisata alam yang
+                              dapat memberikan efek penyembuhan bagi pengunjung. Taman
+                              Nasional Komodo, dengan keindahan bawah laut dan spesies
+                              uniknya, seperti komodo, adalah salah satu daya tarik utama.
+                              Selain itu, Labuan Bajo menawarkan pantai berpasir putih,
+                              perairan biru jernih, serta pulau-pulau eksotis yang memikat
+                              hati. Keindahan alam ini menciptakan suasana yang menenangkan
+                              dan memulihkan, sesuai dengan konsep "healing" yang sedang
+                              populer di kalangan wisatawan.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!--
+                  Slide kedua dalam slider, menggunakan gambar latar belakang "pulaukomodo.jpg".
+                  Konten di dalamnya memberikan informasi tentang Taman Nasional Komodo, salah satu destinasi top di Labuan Bajo.
+              -->
+              <div class="swiper-slide">
+                  <div class="box second" style="background: url(../images/pulaukomodo.jpg) no-repeat">
+                      <div class="content">
+                          <span>Destinasi Top</span>
+                          <h3>Taman Nasional Komodo</h3>
+                          <p>
+                              Taman Nasional Komodo, yang diakui sebagai Situs Warisan Dunia
+                              oleh UNESCO, adalah ikon utama Labuan Bajo. Penelitian oleh
+                              Cahyadi (2019) menunjukkan bahwa kunjungan ke Taman Nasional
+                              Komodo tidak hanya memberikan pengalaman rekreasi tetapi juga
+                              efek penyembuhan psikologis dan emosional bagi pengunjung.
+                              Melalui snorkeling dan diving, wisatawan dapat menikmati
+                              keindahan terumbu karang dan kehidupan laut yang kaya, yang
+                              dapat mengurangi stres dan meningkatkan kesejahteraan.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!--
+                  Slide ketiga dalam slider, dengan latar belakang gambar "pantaipink.jpg".
+                  Konten ini menyoroti keunikan Pantai Pink, salah satu destinasi yang terkenal di Labuan Bajo.
+              -->
+              <div class="swiper-slide">
+                  <div class="box" style="background: url(../images/pantaipink.jpg) no-repeat">
+                      <div class="content">
+                          <span>Destinasi Top</span>
+                          <h3>Keunikan Pantai Pink</h3>
+                          <p>
+                              Pantai Pink, salah satu dari hanya beberapa pantai berpasir
+                              merah muda di dunia, menawarkan pengalaman visual yang unik
+                              dan mempesona. Menurut studi oleh Wijaya (2020), keindahan dan
+                              keunikan Pantai Pink dapat memberikan efek terapi visual yang
+                              signifikan, membantu mengurangi kecemasan dan meningkatkan
+                              suasana hati. Kombinasi warna alam yang menakjubkan dan
+                              ketenangan pantai menjadikannya tempat ideal untuk relaksasi
+                              dan "healing."
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!--
+              Tombol untuk menggeser slide ke kanan (slide berikutnya).
+              Biasanya diberi ikon atau ditangani secara interaktif oleh pustaka Swiper.
+          -->
+          <div class="swiper-button-next"></div>
+          
+          <!--
+              Tombol untuk menggeser slide ke kiri (slide sebelumnya).
+          -->
+          <div class="swiper-button-prev"></div>
+      </div>
+  </section>
+<!-- home section End -->
+
+<!-- services section start -->
+      <!--
+      Bagian ini adalah elemen <section> dengan kelas "services".
+      Bagian ini digunakan untuk menampilkan daftar layanan atau alasan mengapa pengunjung harus memilih layanan perusahaan atau organisasi.
+  -->
+  <section class="services">
+      
+      <!--
+          Heading utama dari bagian ini yang memberikan judul "Mengapa Memilih Kami?".
+          Heading ini memberikan konteks untuk elemen-elemen yang akan ditampilkan di bawahnya.
+      -->
+      <h1 class="heading">Mengapa Memilih Kami ?</h1>
+
+      <!--
+          Kontainer utama yang membungkus semua kotak (box) layanan yang tersedia.
+          Masing-masing kotak akan memuat gambar, judul, dan deskripsi dari layanan atau fitur yang ditawarkan.
+      -->
+      <div class="box-container">
+          
+          <!--
+              Kotak pertama yang menampilkan layanan "Pengalaman yang Tak Terlupakan".
+              Gambar dan deskripsi ditampilkan untuk memberikan informasi lebih detail tentang layanan ini.
+              Saat ini gambar belum ditentukan karena atribut 'src' kosong.
+          -->
+          <div class="box">
+              <img src="" alt="" />
+              <h3>Pengalaman yang Tak Terlupakan</h3>
+              <p>
+                  Kami menawarkan pengalaman wisata yang dirancang untuk membawa Anda lebih dekat dengan keindahan alam Labuan Bajo. Setiap perjalanan bersama kami adalah kesempatan untuk menciptakan kenangan yang tak terlupakan.
+              </p>
+          </div>
+
+          <!--
+              Kotak kedua menampilkan layanan "Ahli Lokal Terpercaya".
+              Gambar '2.jpg' digunakan untuk menggambarkan layanan ini dengan deskripsi tentang pemandu lokal yang ahli.
+          -->
+          <div class="box">
+              <img src="../images/2.jpg" alt="" />
+              <h3>Ahli Lokal Terpercaya</h3>
+              <p>
+                  Dengan pemandu lokal yang berpengalaman dan mengenal setiap sudut Labuan Bajo, Anda akan mendapatkan perjalanan yang autentik dan informatif. Kami memastikan Anda tidak melewatkan keajaiban alam terbaik dari pulau-pulau sekitar.
+              </p>
+          </div>
+
+          <!--
+              Kotak ketiga yang menampilkan layanan "Layanan Prima".
+              Gambar '3.jpg' digunakan untuk mengilustrasikan deskripsi layanan prima yang diberikan kepada pelanggan.
+          -->
+          <div class="box">
+              <img src="../images/3.jpg" alt="" />
+              <h3>Layanan Prima</h3>
+              <p>
+                  Kami percaya bahwa perjalanan yang baik dimulai dari layanan yang baik. Mulai dari proses pemesanan hingga kembali dari perjalanan, tim kami selalu siap untuk memastikan kenyamanan dan kepuasan Anda.
+              </p>
+          </div>
+
+          <!--
+              Kotak keempat yang menampilkan layanan "Petualangan yang Disesuaikan".
+              Gambar '4.jpg' digunakan untuk menggambarkan fleksibilitas dalam menyesuaikan paket wisata sesuai keinginan pelanggan.
+          -->
+          <div class="box">
+              <img src="../images/4.jpg" alt="" />
+              <h3>Petualangan yang Disesuaikan</h3>
+              <p>
+                  Tidak ada perjalanan yang sama. Kami menawarkan paket wisata yang fleksibel dan dapat disesuaikan dengan preferensi Anda, apakah itu snorkeling di Pink pulaupadar, trekking di Pulau Komodo, atau sekadar menikmati keindahan sunset di Labuan Bajo.
+              </p>
+          </div>
+
+          <!--
+              Kotak kelima yang menampilkan layanan "Komitmen pada Keberlanjutan".
+              Gambar '5.jpg' digunakan untuk mendukung narasi tentang kepedulian terhadap lingkungan dan komitmen keberlanjutan.
+          -->
+          <div class="box">
+              <img src="../images/5.jpg" alt="" />
+              <h3>Komitmen pada Keberlanjutan</h3>
+              <p>
+                  Kami peduli terhadap lingkungan. Dengan berkolaborasi dengan komunitas lokal dan menerapkan praktik pariwisata yang berkelanjutan, kami berkomitmen untuk menjaga keindahan alam Labuan Bajo tetap lestari untuk generasi mendatang.
+              </p>
+          </div>
+
+          <!--
+              Kotak keenam yang menampilkan layanan "Pengalaman Premium di Destinasi Eksotis".
+              Gambar '6.jpg' digunakan untuk menggambarkan pengalaman mewah di destinasi wisata eksotis Labuan Bajo.
+          -->
+          <div class="box">
+              <img src="../images/6.jpg" alt="" />
+              <h3>Pengalaman Premium di Destinasi Eksotis</h3>
+              <p>
+                  Labuan Bajo adalah salah satu destinasi paling eksotis di Indonesia, dan kami siap membawa Anda menjelajahi keajaiban alam yang menakjubkan. Dari pemandangan laut biru yang jernih hingga puncak bukit yang hijau, setiap detik perjalanan bersama kami penuh dengan keindahan.
+              </p>
+          </div>
+
+          <!--
+              Kotak ketujuh yang menampilkan layanan "Harga Kompetitif, Kualitas Terbaik".
+              Gambar '6.jpg' juga digunakan untuk mendukung informasi tentang penawaran harga yang kompetitif namun tetap berkualitas tinggi.
+          -->
+          <div class="box">
+              <img src="../images/6.jpg" alt="" />
+              <h3>Harga Kompetitif, Kualitas Terbaik</h3>
+              <p>
+                  Kami menawarkan harga yang kompetitif tanpa mengorbankan kualitas. Setiap paket perjalanan dirancang agar sesuai dengan anggaran Anda, sambil tetap memberikan pengalaman luar biasa yang sepadan dengan nilai investasi Anda.
+              </p>
+          </div>
+
+          <!--
+              Kotak kedelapan yang menampilkan layanan "Fokus pada Kenyamanan dan Kepuasan".
+              Gambar '6.jpg' digunakan kembali untuk menggambarkan layanan yang berfokus pada kenyamanan dan kepuasan pelanggan.
+          -->
+          <div class="box">
+              <img src="../images/6.jpg" alt="" />
+              <h3>Fokus pada Kenyamanan dan Kepuasan</h3>
+              <p>
+                  Kenyamanan dan kepuasan Anda adalah prioritas utama kami. Dari penginapan yang nyaman hingga itinerary yang dirancang dengan baik, kami bekerja keras untuk memberikan layanan terbaik dan pengalaman tak terlupakan.
+              </p>
+          </div>
+
+      </div>
+  </section>
+<!-- services section end -->
+
+<!-- Gallery -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <h1 class="heading">Gallery Wisata Labuan Bajo</h1>
+        <div class="row">
+          <div class="col-12">
+                      <ul
+            class="nav justify-content-center px-2 px-lg-5"
+            id="myTab"
+            role="tablist"
+          >
+            <!-- Elemen <ul> ini berfungsi sebagai kontainer untuk daftar tab navigasi yang digunakan untuk berpindah antar konten di halaman yang sama. 
+                Kelas "nav justify-content-center" memastikan item tab berada di tengah halaman, 
+                sementara "px-2 px-lg-5" menambahkan padding horizontal untuk tampilan yang lebih rapi pada layar kecil dan besar. -->
+            
+            <li class="nav-item" role="presentation">
+              <!-- Setiap <li> berfungsi sebagai kontainer untuk sebuah tab navigasi -->
+              <a
+                class="nav-link mx-3 mx-lg-4 active"
+                id="pulaupadar-tab"
+                data-toggle="tab"
+                href="#pulaupadar"
+                role="tab"
+                aria-controls="pulaupadar"
+                aria-selected="true"
+              >
+                Pulau Padar
+              </a>
+              <!-- 
+                <a> ini adalah tautan yang berfungsi sebagai tombol tab.
+                Kelas "nav-link" memberikan gaya dasar dari Bootstrap untuk navigasi.
+                "active" menunjukkan bahwa ini adalah tab yang aktif ketika halaman pertama kali dimuat.
+                "mx-3 mx-lg-4" menambahkan margin horizontal untuk jarak antar tab.
+                Atribut "data-toggle" digunakan oleh Bootstrap untuk memberitahu bahwa ini adalah elemen tab.
+                Atribut "href" menghubungkan tab dengan konten yang relevan dengan menggunakan ID (#pulaupadar).
+                Atribut "role" menjelaskan peran elemen sebagai tab, "aria-controls" menghubungkan dengan konten tab,
+                dan "aria-selected" menandakan bahwa tab ini saat ini dipilih (aktif).
+              -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="pantaimanjarite-tab"
+                data-toggle="tab"
+                href="#pantaimanjarite"
+                role="tab"
+                aria-controls="pantaimanjarite"
+                aria-selected="false"
+              >
+                Pantai Manjarite
+              </a>
+              <!-- Tautan ini berfungsi sebagai tab untuk menampilkan konten Pantai Manjarite.
+                  Atribut "aria-selected" bernilai "false", artinya tab ini tidak aktif saat halaman dimuat pertama kali. -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="pulaukelor-tab"
+                data-toggle="tab"
+                href="#pulaukelor"
+                role="tab"
+                aria-controls="pulaukelor"
+                aria-selected="false"
+              >
+                Pulau Kelor
+              </a>
+              <!-- Tab ini menampilkan konten Pulau Kelor. Atribut-atribut lain seperti sebelumnya mengatur penghubungan tab dengan kontennya. -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="pulaukalong-tab"
+                data-toggle="tab"
+                href="#pulaukalong"
+                role="tab"
+                aria-controls="pulaukalong"
+                aria-selected="false"
+              >
+                Pulau Kalong
+              </a>
+              <!-- Tab untuk konten Pulau Kalong. Kegunaannya sama dengan tab sebelumnya. -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="pulaukomodo-tab"
+                data-toggle="tab"
+                href="#pulaukomodo"
+                role="tab"
+                aria-controls="pulaukomodo"
+                aria-selected="false"
+              >
+                Pulau Komodo
+              </a>
+              <!-- Tab ini menampilkan konten untuk Pulau Komodo. -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="takamakassar-tab"
+                data-toggle="tab"
+                href="#takamakassar"
+                role="tab"
+                aria-controls="takamakassar"
+                aria-selected="false"
+              >
+                Taka Makassar
+              </a>
+              <!-- Tab untuk Taka Makassar, pengguna dapat berpindah ke konten ini saat diklik. -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="pulaukanawa-tab"
+                data-toggle="tab"
+                href="#pulaukanawa"
+                role="tab"
+                aria-controls="pulaukanawa"
+                aria-selected="false"
+              >
+                Pulau Kanawa
+              </a>
+              <!-- Tab untuk Pulau Kanawa. -->
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link mx-3 mx-lg-4"
+                id="labuanbajo-tab"
+                data-toggle="tab"
+                href="#labuanbajo"
+                role="tab"
+                aria-controls="labuanbajo"
+                aria-selected="false"
+              >
+                Kota Labuan Bajo
+              </a>
+              <!-- Tab ini menampilkan konten untuk Kota Labuan Bajo. -->
+            </li>
+          </ul>
+            <div class="tab-content border" id="myTabContent">
+          <!-- Tab untuk konten pulau padar -->
+            <div class="tab-pane fade show active" id="pulaupadar" role="tabpanel" aria-labelledby="pulaupadar-tab">
+              <div class="row mt-3 mt-md-4">
+                
+                <!-- Bagian kolom kiri dengan gambar-gambar -->
+                <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                  <div class="row" style="margin-right: -2px;">
+                    
+                    <!-- Gambar pertama di sisi kiri -->
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img src="../images/pulaupadar.jpeg" class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0" />
+                      <!-- Gambar badge yang dinonaktifkan (dikomentari) -->
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+
+                    <!-- Gambar kedua di sisi kiri -->
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img src="../images/pulaupadar.jpg" class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0" />
+                      <!-- Gambar badge yang dinonaktifkan (dikomentari) -->
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <!-- Bagian kolom kanan dengan gambar-gambar -->
+                <div class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column">
+                  
+                  <!-- Gambar atas di sisi kanan -->
+                  <div class="row">
+                    <div class="col-sm-12 d-flex">
+                      <div class="top-right-img">
+                        <img src="../images/pulaupadar1.jpg" class="img-fluid flex-sm-fill" />
+                        <!-- Badge yang dinonaktifkan -->
+                        <!-- <div class="badge-img">Lagos</div> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Gambar bawah di sisi kanan (dua gambar) -->
+                  <div class="row mt-3 mt-sm-auto">
+                    
+                    <!-- Gambar kiri bawah -->
+                    <div class="col-7 pr-sm-2 d-flex">
+                      <div class="bottom-left-img d-flex">
+                        <img src="../images/pulaupadar2.png" class="img-fluid" />
+                        <!-- Badge yang dinonaktifkan -->
+                        <!-- <div class="badge-img">Indrayanti</div> -->
+                      </div>
+                    </div>
+                    
+                    <!-- Gambar kanan bawah -->
+                    <div class="col-5 pl-sm-2 d-flex">
+                      <div class="bottom-right-img d-flex">
+                        <img src="../images/pulaupadarhd1.jpg" class="img-fluid" />
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!-- Tab untuk konten pantai manjarite -->
+              <div class="tab-pane fade" id="pantaimanjarite" role="tabpanel" aria-labelledby="pantaimanjarite-tab">
+                <div class="row mt-3 mt-md-4">
+                  
+                  <!-- Kolom kiri untuk gambar-gambar -->
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                      
+                      <!-- Gambar pertama di sisi kiri -->
+                      <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                        <img src="../images/pantaimanjarite.png" class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0" />
+                        <!-- Badge yang dinonaktifkan -->
+                        <!-- <div class="badge-img">Majorca pantaimanjarite</div> -->
+                      </div>
+
+                      <!-- Gambar kedua di sisi kiri -->
+                      <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                        <img src="../images/pantaimanjarite241.jpeg" class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0" />
+                        <!-- Badge yang dinonaktifkan -->
+                        <!-- <div class="badge-img">Majorca pantaimanjarite</div> -->
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Kolom kanan untuk gambar-gambar -->
+                  <div class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column">
+                    
+                    <!-- Gambar atas di sisi kanan -->
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img">
+                          <img src="../images/pantaimanjarite242.jpeg" class="img-fluid flex-sm-fill" />
+                          <!-- Badge yang dinonaktifkan -->
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Gambar bawah di sisi kanan (dua gambar) -->
+                    <div class="row mt-3 mt-sm-auto">
+                      
+                      <!-- Gambar kiri bawah -->
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img src="../images/pantaimanjarite243.jpeg" class="img-fluid" />
+                          <!-- Badge yang dinonaktifkan -->
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      
+                      <!-- Gambar kanan bawah -->
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img src="../images/pantaimanjarite244.jpeg" class="img-fluid" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pulaukelor"
+                role="tabpanel"
+                aria-labelledby="pulaukelor-tab"
+              >
+                <div class="row mt-3 mt-md-4">
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukelor.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukelor.png"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div
+                    class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column"
+                  >
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img">
+                          <img
+                            src="../images/pulaukelor1.jpg"
+                            class="img-fluid flex-sm-fill"
+                          />
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3 mt-sm-auto">
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img
+                            src="../images/pulaukelor2.jpeg"
+                            class="img-fluid"
+                          />
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img
+                            src="../images/pulaukelor241.jpeg"
+                            class="img-fluid"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pulaukalong"
+                role="tabpanel"
+                aria-labelledby="pulaukalong-tab"
+              >
+                <div class="row mt-3 mt-md-4">
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukalongsecond.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukalong244.jpeg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div
+                    class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column"
+                  >
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img ">
+                          <img
+                            src="../images/pulaukalonghd.jpg"
+                            class="img-fluid flex-sm-fill"
+                          />
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3 mt-sm-auto">
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img
+                            src="../images/pulaukalong242.jpeg"
+                            class="img-fluid"
+                          />
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img
+                            src="../images/pulaukalong241.jpeg"
+                            class="img-fluid"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <div
+                class="tab-pane fade"
+                id="pulaukomodo"
+                role="tabpanel"
+                aria-labelledby="pulaukomodo-tab"
+              >
+                <div class="row mt-3 mt-md-4">
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukomodo.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukomodo1.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                  </div>
+                
+                  </div>
+                  <div
+                    class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column"
+                  >
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img">
+                          <img
+                            src="../images/pulaukomodohd.jpg"
+                            class="img-fluid flex-sm-fill"
+                          />
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3 mt-sm-auto">
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img
+                            src="../images/pulaukomodohd2.jpg"
+                            class="img-fluid"
+                          />
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img
+                            src="../images/pulaukomodo241.jpeg"
+                            class="img-fluid"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="takamakassar"
+                role="tabpanel"
+                aria-labelledby="takamakassar-tab"
+              >
+                <div class="row mt-3 mt-md-4">
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/takkamakasar.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/taka241.jpeg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div
+                    class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column"
+                  >
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img">
+                          <img
+                            src="../images/taka242.jpeg"
+                            class="img-fluid flex-sm-fill"
+                          />
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3 mt-sm-auto">
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img
+                            src="../images/taka243.jpeg"
+                            class="img-fluid"
+                          />
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img
+                            src="../images/taka244.jpeg"
+                            class="img-fluid"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pulaukanawa"
+                role="tabpanel"
+                aria-labelledby="pulaukanawa-tab"
+              >
+                <div class="row mt-3 mt-md-4">
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukanawa.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/pulaukanawa.png"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div
+                    class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column"
+                  >
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img">
+                          <img
+                            src="../images/pulaukanawahd.jpg"
+                            class="img-fluid flex-sm-fill"
+                          />
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3 mt-sm-auto">
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img
+                            src="../images/pulaukanawa241.jpeg"
+                            class="img-fluid"
+                          />
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img
+                            src="../images/pulaukanawa242.jpeg"
+                            class="img-fluid"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="labuanbajo"
+                role="tabpanel"
+                aria-labelledby="labuanbajo-tab"
+              >
+                <div class="row mt-3 mt-md-4">
+                  <div class="col-12 col-sm-5 pr-sm-1 d-flex">
+                    <div class="row" style="margin-right: -2px;">
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/labuanbajo.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                    <div class="left-img d-flex flex-fill flex-sm-grow-0">
+                      <img
+                        src="../images/labuanbajo241.jpg"
+                        class="img-fluid d-flex flex-fill flex-sm-grow-0 flex-sm-shrink-0"
+                      />
+                      <!-- <div class="badge-img">Majorca pulaupadar</div> -->
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div
+                    class="col-12 col-sm-7 pl-sm-2 text-right mt-3 mt-sm-0 d-flex flex-column"
+                  >
+                    <div class="row">
+                      <div class="col-sm-12 d-flex">
+                        <div class="top-right-img">
+                          <img
+                            src="../images/labuanbajosecond.jpg"
+                            class="img-fluid flex-sm-fill"
+                          />
+                          <!-- <div class="badge-img">Lagos</div> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3 mt-sm-auto">
+                      <div class="col-7 pr-sm-2 d-flex">
+                        <div class="bottom-left-img d-flex">
+                          <img
+                            src="../images/labuanbajohd.jpg"
+                            class="img-fluid"
+                          />
+                          <!-- <div class="badge-img">Indrayanti</div> -->
+                        </div>
+                      </div>
+                      <div class="col-5 pl-sm-2 d-flex">
+                        <div class="bottom-right-img d-flex">
+                          <img
+                            src="../images/labuanbajo242.jpeg"
+                            class="img-fluid"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>   
+    </section>
+<!-- Akhir Gallery -->
+
+<!-- opentrip section start -->
+  <section class="popular" id="popular">
+    <!-- Bagian ini adalah sebuah section dengan kelas "popular" dan id "popular". 
+        Kegunaannya untuk menampilkan daftar destinasi populer di halaman web. -->
+
+    <h1 class="heading">Destinasi Populer</h1>
+    <!-- Elemen <h1> ini menampilkan judul bagian, yaitu "Destinasi Populer". -->
+
+    <div class="popular-list">
+      <!-- Div ini berfungsi sebagai wadah utama untuk daftar destinasi yang populer. -->
+
+      <div class="row">
+        <!-- Elemen div dengan kelas "row" ini digunakan untuk mengatur tata letak grid untuk setiap destinasi populer. -->
+
+        <!-- Card 1: Pulau Padar -->
+        <div class="col-10 col-xl-3 col-lg-4 col-md-6 mx-auto my-1">
+          <!-- Div ini mengatur ukuran dan tata letak responsif untuk setiap card destinasi. 
+              Kelas "col-10" hingga "col-md-6" mengatur grid berdasarkan ukuran layar (besar, medium, dan kecil). 
+              "mx-auto" dan "my-1" memberikan margin horisontal otomatis dan margin vertikal kecil untuk setiap card. -->
+
+          <div class="popular-card">
+            <!-- Elemen ini adalah kontainer untuk seluruh isi dari card destinasi Pulau Padar. -->
+
+            <figure class="card-img">
+              <!-- Elemen <figure> digunakan untuk membungkus gambar destinasi. -->
+              <img
+                src="../images/pulaupadar.jpeg"
+                alt="Pulau Padar, Indonesia"
+                loading="lazy"
+              />
+              <!-- Gambar destinasi Pulau Padar. Atribut "alt" memberikan teks alternatif jika gambar gagal dimuat. 
+                  Atribut "loading='lazy'" digunakan untuk menunda pemuatan gambar hingga dibutuhkan (meningkatkan kinerja halaman). -->
+            </figure>
+
+            <div class="card-content">
+              <!-- Kontainer untuk isi card, termasuk rating, lokasi, judul, dan deskripsi. -->
+
+              <div class="card-rating">
+                <!-- Bagian ini menampilkan rating dengan ikon bintang menggunakan Font Awesome. 
+                    "fa-solid" menandakan ikon bintang penuh dan "fa-regular" untuk bintang kosong. -->
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+
+              <p class="card-subtitle">
+                <!-- Subtitle card berisi lokasi destinasi dengan ikon penunjuk lokasi dari Font Awesome. -->
+                <a href="#"><i class="fa-solid fa-location-crosshairs"></i> Indonesia</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <!-- Judul card yang bisa diklik menuju halaman detail destinasi. -->
+                <a href="#">Pulau Padar</a>
+              </h3>
+
+              <p class="card-text">
+                <!-- Deskripsi singkat tentang destinasi Pulau Padar. -->
+                Pulau Padar adalah pulau terbesar ketiga di kawasan Taman Nasional Komodo, setelah Pulau Komodo dan Pulau Rinca.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pink Beach -->
+        <div class="col-10 col-xl-3 col-lg-4 col-md-6 mx-auto my-1">
+          <!-- Struktur dan kegunaan untuk card destinasi Pink Beach sama seperti card pertama (Pulau Padar). -->
+
+          <div class="popular-card">
+            <figure class="card-img">
+              <img
+                src="../images/pantaipink.jpg"
+                alt="Pink Beach, Indonesia"
+                loading="lazy"
+              />
+            </figure>
+
+            <div class="card-content">
+              <div class="card-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#"><i class="fa-solid fa-location-crosshairs"></i>Indonesia</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Pink Beach</a>
+              </h3>
+
+              <p class="card-text">
+                Pantai berpasir merah muda dengan air jernih dan terumbu karang yang penuh dengan ikan tropis serta arus yang kuat.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Pulau Komodo -->
+        <div class="col-10 col-xl-3 col-lg-4 col-md-6 mx-auto my-1">
+          <!-- Struktur dan kegunaan untuk card destinasi Pulau Komodo sama seperti card sebelumnya. -->
+
+          <div class="popular-card">
+            <figure class="card-img">
+              <img
+                src="../images/pulaukomodo.jpg"
+                alt="Pulau Komodo, Indonesia"
+                loading="lazy"
+              />
+            </figure>
+
+            <div class="card-content">
+              <div class="card-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="card-subtitle">
+                <a href="#"><i class="fa-solid fa-location-crosshairs"></i>Indonesia</a>
+              </p>
+
+              <h3 class="h3 card-title">
+                <a href="#">Pulau Komodo</a>
+              </h3>
+
+              <p class="card-text">
+                Pulau Komodo adalah sebuah pulau yang terletak di Kepulauan Nusa Tenggara, di sebelah timur Pulau Sumbawa, dipisahkan oleh Selat Sape.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Akhir dari div "row", yang berisi semua card destinasi populer. -->
+
+      <!-- Button Section -->
+      <div class="row mt-4 text-center">
+        <!-- Baris yang berisi tombol untuk melihat lebih banyak paket destinasi. 
+            "mt-4" menambahkan margin atas untuk memberi jarak antar elemen. -->
+        <a href="opentrip.html" class="btn">
+          Lihat Paket Destinasi Selengkapnya...
+        </a>
+        <!-- Tombol ini mengarahkan pengguna ke halaman opentrip.html untuk melihat paket destinasi lainnya. -->
+      </div>
+    </div>
+  </section>
+<!-- opentrip section end -->
+
+<!-- reviews section start -->
+    <section class="reviews" id="reviews">
+    <!-- Heading untuk bagian review pelanggan -->
+    <h1 class="heading">Review Pelanggan</h1>
+
+    <!-- Wrapper untuk komponen Swiper yang akan menampilkan review dalam bentuk slider -->
+    <div class="swiper review-slider">
+      
+      <!-- Swiper-wrapper berfungsi sebagai kontainer untuk semua slide yang akan ditampilkan -->
+      <div class="swiper-wrapper">
+
+        <!-- Slide pertama, berisi review dari pelanggan dengan nama dan profesi -->
+        <div class="swiper-slide slide">
+          <!-- Konten teks ulasan dari pelanggan -->
+          <p class="text">
+            “Pengalaman kami dengan tim ini benar-benar luar biasa dan tak terlupakan! Sejak saat kami tiba di Labuan Bajo, tim menunjukkan tingkat profesionalisme yang sangat tinggi...”
+          </p>
+
+          <!-- Informasi pengguna yang memberikan review, termasuk gambar, nama, dan profesi -->
+          <div class="user">
+            <img src="../images/orang/W1.jpg" alt="" />
+            <div class="info">
+              <h3>Julia H.</h3>
+              <span>Arsitek</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide kedua, berisi review lain dari pelanggan yang berbeda -->
+        <div class="swiper-slide slide">
+          <p class="text">
+            “Perjalanan ke Labuan Bajo yang kami alami sungguh menakjubkan dan penuh keajaiban. Destinasi ini lebih dari sekadar tempat wisata; ini adalah sebuah petualangan...”
+          </p>
+          <div class="user">
+            <img src="../images/orang/P1.jpg" alt="" />
+            <div class="info">
+              <h3>Eric M</h3>
+              <span>Pekerja Sosial</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide ketiga, dengan ulasan dari pelanggan yang berbeda -->
+        <div class="swiper-slide slide">
+          <p class="text">
+            “Perjalanan ini adalah salah satu pengalaman terbaik dalam hidup saya, dan saya sangat berterima kasih kepada tim yang mengatur semuanya...”
+          </p>
+          <div class="user">
+            <img src="../images/orang/P2.jpg" alt="" />
+            <div class="info">
+              <h3>John B.</h3>
+              <span>Dokter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tambahan slide ulasan lainnya mengikuti pola yang sama -->
+        <!-- Slide berikutnya -->
+        <div class="swiper-slide slide">
+          <p class="text">
+            “Dari proses pemesanan hingga akhir perjalanan, segala sesuatu dikelola dengan sangat baik dan profesional. Tim ini membuat setiap detail dari perjalanan kami menjadi sangat berharga...”
+          </p>
+          <div class="user">
+            <img src="../images/orang/P3.jpg" alt="" />
+            <div class="info">
+              <h3>Michael L.</h3>
+              <span>Insinyur</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide lainnya diikuti dengan format serupa -->
+        <!-- ... -->
+
+      </div> <!-- Akhir dari swiper-wrapper -->
+    </div> <!-- Akhir dari swiper review-slider -->
+  </section>
+<!-- reviews section end -->
+
+<!-- newletter section Start -->
+  <section class="newletter" id="newletter">
+    <!-- Kontainer utama untuk bagian langganan newsletter -->
+    <div class="content">
+      
+      <!-- Judul bagian untuk mengajak pengunjung berlangganan -->
+      <h1 class="heading">Yuk, Subscribe</h1>
+      
+      <!-- Deskripsi tentang manfaat berlangganan newsletter -->
+      <p>
+        Temukan segala yang Anda butuhkan untuk merencanakan liburan yang tak terlupakan ke Labuan Bajo dengan mudah. Dari panduan destinasi lengkap hingga tips perjalanan eksklusif, kami menyediakan informasi yang berguna untuk memastikan perjalanan Anda berjalan lancar. Dengan berlangganan situs kami, Anda akan mendapatkan akses ke konten premium, penawaran khusus, dan pembaruan terbaru tentang destinasi impian Anda. Jangan lewatkan kesempatan untuk memanfaatkan semua manfaat yang kami tawarkan. Langganan sekarang dan mulailah merencanakan petualangan Anda di Labuan Bajo dengan percaya diri!
+      </p>
+
+      <!-- Formulir untuk pengunjung memasukkan alamat email mereka -->
+      <form action="https://script.google.com/macros/s/AKfycby_TppsJCGguJ6WHIt8MFSNbFySvlmB6pjagmpUtNU2I7JBcRWAqvf_XRDPdbYibb0I/exec" method="POST" id="my-form">
+        <!-- Input untuk alamat email -->
+        <input
+          type="email"
+          name="email"
+          placeholder="enter your email"
+          id="email"
+          class="email"
+        />
+        <!-- Tombol untuk mengirimkan formulir -->
+        <input type="submit" value="subscribe" class="btn" />
+      </form>
+
+      <!-- Bagian untuk menampilkan loading ketika formulir diproses -->
+      <div id="loading">
+        <video id="svg" autoplay loop muted>
+          <source src="../images/loading.mp4" type="video/mp4" />
+        </video>
+        <p>loading...</p>
+      </div>
+    </div>
+  </section>
+<!-- newletter section end -->
+
+<!-- footer section start -->
+      <section class="footer">
+    <!-- Kontainer utama untuk footer -->
+    <div class="box-container">
+      
+      <!-- Kotak untuk tautan cepat -->
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#home">Home</a>
+        <a href="opentrip.html">Open Trip Labuan Bajo</a>
+        <a href="sewaspeedboat.html">Sewa Speed Boat</a>
+        <a href="blog.html">Kumpulan Artikel</a>
+      </div>
+
+      <!-- Kotak untuk informasi kontak -->
+      <div class="box">
+        <h3>Contact Info</h3>
+        <a href="#"><i class="fas fa-phone"></i>0881-0109-30936</a>
+        <a href="#"><i class="fas fa-phone"></i>0812-3920-7325</a>
+        <a href="#"
+          ><i class="fas fa-envelope"></i>ertoello28ubsi@gmail.com</a
+        >
+        <a href="#"><i class="fas fa-map"></i>Flores, NTT, Indonesia</a>
+      </div>
+
+      <!-- Kotak untuk tautan media sosial -->
+      <div class="box">
+        <h3>Folow Us</h3>
+        <a href="https://ertoello.github.io/"><i class="fab fa-facebook"></i>Facebook</a>
+        <a href="https://ertoello.github.io/"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="https://ertoello.github.io/"><i class="fab fa-instagram"></i>Instagram</a>
+        <a href="https://ertoello.github.io/"><i class="fab fa-linkedin"></i>Linkedin</a>
+        <a href="https://ertoello.github.io/"><i class="fab fa-github"></i>Github</a>
+      </div>
+    </div>
+
+    <!-- Kredit hak cipta -->
+    <div class="credit">
+      <p>&copy; 2024 Labuan Bajo Tour By <span>Yohanes Serpiyanto Elo | All rights reserved</span></p>
+    </div>
+  </section>
+<!-- footer section end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../js/scriptotlb.js "></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+      integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../js/loadbajo.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

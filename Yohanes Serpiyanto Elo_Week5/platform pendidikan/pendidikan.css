@@ -1,0 +1,142 @@
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #E6E6FA; /* Warna latar belakang yang lembut */
+        /* overflow-x: hidden; */
+    }
+    .dashboard-card {
+        background-color: #FFFFFF; /* Warna putih untuk background card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Shadow lembut */
+        border-radius: 12px; /* Rounded corners */
+        margin-bottom: 20px;
+        transition: transform 0.2s ease-in-out;
+    }
+    .dashboard-card:hover {
+        transform: translateY(-5px); /* Animasi hover */
+    }
+    .progress-bar {
+        background-color: #3FA3CE; /* Warna progress bar: Biru */
+    }
+    .nav-item a {
+        color: #3FA3CE; /* Warna navigasi: Biru */
+        font-weight: 500;
+    }
+    .nav-item a:hover {
+        color: #EF8B8B; /* Warna hover navigasi: Merah Muda */
+    }
+    h1, h4, p {
+        color: #333333; /* Warna teks yang lebih netral */
+    }
+    .sidebar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        background-color: #3FA3CE; /* Warna sidebar: Biru */
+        color: white;
+        padding-top: 20px;
+        z-index: 1;
+    }
+    .sidebar a {
+        color: #FFFFFF; /* Warna link sidebar: Putih */
+        font-weight: 500;
+        padding: 15px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+    }
+    .sidebar a:hover {
+        background-color: #EF8B8B; /* Hover: Merah Muda */
+    }
+    .container-content {
+        margin-left: 270px; /* Menghindari overlap dengan sidebar */
+    }
+    .stat-box {
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .stat-title {
+        font-size: 18px;
+        color: #333333;
+    }
+    .stat-number {
+        font-size: 30px;
+        font-weight: bold;
+        color: #3FA3CE;
+    }
+    .timeline {
+        position: relative;
+        padding: 10px 0;
+        list-style: none;
+    }
+    .timeline-item {
+        position: relative;
+        padding: 15px 30px;
+        margin: 15px 0;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        width: 10px;
+        height: 10px;
+        background: #3FA3CE;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .timeline-date {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #6c757d;
+    }
+    .timeline-content {
+        margin-top: 5px;
+    }
+    .circular-chart {
+        display: block;
+        margin: 0 auto;
+        max-width: 80px;
+        max-height: 80px;
+    }
+    .circle-bg {
+        fill: none;
+        stroke: #D7D7D7;
+        stroke-width: 3.8;
+    }
+    .circle {
+        fill: none;
+        stroke-width: 2.8;
+        stroke: #3FA3CE;
+        stroke-linecap: round;
+        animation: progress 1s ease-out forwards;
+    }
+    .percentage {
+        fill: #333;
+        font-size: 0.5em;
+        text-anchor: middle;
+    }
+    @keyframes progress {
+        0% {
+            stroke-dasharray: 0, 100;
+        }
+    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .container-content {
+            margin-left: auto;
+            margin-right: auto;
+            /* padding: 10px; */
+            }
+        .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        }
+    }
