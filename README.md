@@ -10,3 +10,9 @@ Vokasi
 Universitas Negeri Surabaya
 Angkatan 2021 
 Product Manager
+----------------------------------------------------------------
+Chasetyo Ivan Yusaga
+Informatika
+UPN Veteran Jawa Timur
+Angkatan 2022
+Back End Developer
