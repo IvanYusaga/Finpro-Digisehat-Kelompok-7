@@ -1,6 +1,6 @@
 # Finpro-Digisehat-Kelompok-7
 
-Naufal Yogi Aptana
-Naufal
-Informatika, FIK, Universitas Amikom Purwokerto angakatan 2021
-Data Scientist
+YOHANES SERPIYANTO ELO
+YOHANES
+TEKNOLOGI INFORMASI, UNIVERSITAS BINA SARANA INFORMATIKA 2021
+fRONT END DEVELOPMENT
