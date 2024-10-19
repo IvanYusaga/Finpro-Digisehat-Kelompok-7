@@ -21,3 +21,4 @@ Informatika
 UPN Veteran Jawa Timur
 Angkatan 2022
 Back End Developer
+----------------------------------------------------------------

@@ -1,0 +1,154 @@
+.navbar {
+    background-color: rgb(230, 182, 216);
+}
+
+.navbar-brand img{
+    height: 40px;
+    background-color: #fff;
+}
+
+.header-image {
+    background-image: url('image/bg-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 280px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+    object-fit: cover;
+    text-align: center;
+}
+
+.carousel-image{
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    font-style: bold;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-muted {
+    font-size: 0.6em;
+}
+
+.card-title {
+    font-size: 20px;
+    line-height: 20px;
+    max-height: 43px;
+    height: 43px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    font-size: 14px;
+    line-height: 1.2em;
+    height: 3.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: rgb(226, 177, 212);
+    margin-top: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+footer {
+    background-color: rgb(226, 177, 212);
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    .header-image {
+        height: 150px;
+    }
+    .header-image h1 p {
+        text-align: center;
+    }
+    .carousel-image {
+        height: 214px;
+    }
+    .carousel-caption h5{
+        font-size: 20px;
+    }
+    .carousel-caption p {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        background-color: rgb(155, 96, 137);
+    }
+    .header-image {
+        height: 250px;
+    }
+    .btn {
+        background-color: rgb(155, 96, 137);
+    }
+    .carousel-image {
+        height: 250px;
+    }
+    .carousel-caption h5{
+        font-size: 25px;
+    }
+    .carousel-caption p {
+        font-size: 15px;
+    }
+    footer {
+        background-color: rgb(155, 96, 137);
+    }
+}
