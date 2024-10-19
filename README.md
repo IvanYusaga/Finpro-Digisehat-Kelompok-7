@@ -16,3 +16,9 @@ Informatika
 UPN Veteran Jawa Timur
 Angkatan 2022
 Back End Developer
+----------------------------------------------------------------
+Adjie Arrayan Surya Putra
+Sistem Informasi
+Universitas SIngaperbangsa Karawang
+Angkatan 2022
+Front End Developer
