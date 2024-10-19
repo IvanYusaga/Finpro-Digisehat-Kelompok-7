@@ -1,6 +1,6 @@
 # Finpro-Digisehat-Kelompok-7
 
-Naufal Yogi Aptana
-Naufal
-Informatika, FIK, Universitas Amikom Purwokerto angakatan 2021
-Data Scientist
+Alya Wahyuning Syahbani
+Alya
+Sistem Informasi, FIK, Universitas Amikom Yogyakarta angkatan 2022
+Fullstack Web Developer
