@@ -23,11 +23,11 @@ Fullstack Web
 
 ---
 
-> > > > > > > 34cb20df42cc91adcc9a98c8c5034fef3fde2529
-> > > > > > > Naufal Yogi Aptana
-> > > > > > > Naufal
-> > > > > > > Informatika, FIK, Universitas Amikom Purwokerto angakatan 2021
-> > > > > > > Data Scientist
+ 
+ Naufal Yogi Aptana
+ Naufal
+ Informatika, FIK, Universitas Amikom Purwokerto angakatan 2021
+ Data Scientist
 
 ---
 
@@ -44,8 +44,6 @@ Informatika
 UPN Veteran Jawa Timur
 Angkatan 2022
 Back End Developer
-<<<<<<< HEAD
 
 ---
 
-> > > > > > > 34cb20df42cc91adcc9a98c8c5034fef3fde2529
