@@ -26,7 +26,7 @@ Fullstack Web
  
  Naufal Yogi Aptana
  Naufal
- Informatika, FIK, Universitas Amikom Purwokerto angakatan 2021
+ Informatika, FIK, Universitas Amikom Purwokerto angkatan 2021
  Data Scientist
 
 ---
