@@ -1,6 +1,12 @@
 # Finpro-Digisehat-Kelompok-7
 
 ---
+Ainul Hidayah
+Ainul
+Informatika, Fakultas Teknik dan Komputer, Universitas Ichsan Sidenreng Rappang (Sidrap) angkatan 2022
+UI/UX
+
+---
 
 Hendrika Restu Prayoga
 Asal Pati
