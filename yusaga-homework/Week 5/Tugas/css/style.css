@@ -1,0 +1,33 @@
+/* navbar */
+.navbar-nav .nav-link{
+    font-size: 2em;
+}
+
+.navbar-brand img{
+    position: absolute;
+    width:280px;
+    margin-top: -145px;
+    left: 70px;
+}
+
+.progress-oval {
+    height: 20px;
+    border-radius: 50px;
+}
+
+@media (max-width: 1024px) {
+    .col-lg-8 {
+        margin-bottom: 50px;
+    }
+    .col-lg-4 {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-brand img{
+    margin-left: -100px;
+    }
+}
+
+
