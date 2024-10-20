@@ -1,5 +1,10 @@
 # Finpro-Digisehat-Kelompok-7
 ---------------------------------------------------------------
+Alya Wahyuning Syahbani
+Alya
+Sistem Informasi, FIK, Universitas Amikom Yogyakarta angkatan 2022
+Fullstack Web
+---------------------------------------------------------------
 Naufal Yogi Aptana
 Naufal
 Informatika, FIK, Universitas Amikom Purwokerto angakatan 2021
@@ -17,8 +22,3 @@ UPN Veteran Jawa Timur
 Angkatan 2022
 Back End Developer
 ----------------------------------------------------------------
-Adjie Arrayan Surya Putra
-Sistem Informasi
-Universitas SIngaperbangsa Karawang
-Angkatan 2022
-Front End Developer
