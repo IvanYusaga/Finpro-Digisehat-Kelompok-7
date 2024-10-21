@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Siswa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pendidikan.css">
+</head>
+<body>
+            <!-- Sidebar -->
+            <div class="sidebar">
+            <!-- Judul Sidebar -->
+            <h3 class="text-center mb-4"><img src="profil/Foto Pass Beralmet BSI.jpg" class="rounded-circle mb-3" alt="Profile Picture" style="width: 40px; height: 40px; margin-bottom: 0 !important; border: 0.5px solid #fff;"> <!-- Gambar profil pengguna -->Hai,Yohanes</h3> 
+            <!-- Judul utama sidebar dengan styling teks tengah dan margin bawah -->
+
+            <!-- Link ke Dashboard -->
+            <a href="#" onclick="showContent('dashboard')">Dashboard</a>
+            <!-- Link ini akan memanggil fungsi showContent untuk menampilkan bagian Dashboard ketika diklik -->
+            
+            <!-- Link ke Kursus Saya -->
+            <a href="#" onclick="showContent('kursus')">Kursus Saya</a>
+            <!-- Link ini akan memanggil fungsi showContent untuk menampilkan bagian Kursus Saya ketika diklik -->
+            
+            <!-- Link ke Tugas -->
+            <a href="#" onclick="showContent('tugas')">Tugas</a>
+            <!-- Link ini akan memanggil fungsi showContent untuk menampilkan bagian Tugas ketika diklik -->
+            
+            <!-- Link ke Profil -->
+            <a href="#" onclick="showContent('profil')">Profil</a>
+            <!-- Link ini akan memanggil fungsi showContent untuk menampilkan bagian Profil ketika diklik -->
+        </div>
+
+    <div class="container container-content mt-5 col-9">
+            <!-- Dashboard Section -->
+    <div id="dashboard" class="content-section">
+        <!-- Judul Utama Dashboard -->
+        <h1 class="mb-4">Selamat datang, Yohanes Serpiyanto Elo!</h1> 
+        <!-- Menampilkan nama pengguna dengan margin bawah untuk pemisahan yang jelas -->
+
+        <!-- Subjudul yang memberikan informasi tentang progress -->
+        <p class="text-muted mb-5">Di bawah ini, Anda akan menemukan ringkasan komprehensif mengenai kemajuan Anda dalam setiap kursus yang diambil.</p>
+        <!-- Teks deskriptif yang lebih kecil dengan warna abu-abu -->
+
+        <!-- Statistik Dashboard -->
+        <div class="row text-center">
+            <div class="col-md-3"> <!-- Membagi kolom dalam baris untuk statistik -->
+                <div class="dashboard-card p-4 stat-box"> <!-- Card untuk menampilkan statistik -->
+                    <h5 class="stat-title">Kursus Selesai</h5> <!-- Judul statistik -->
+                    <p class="stat-number">4</p> <!-- Menampilkan jumlah kursus yang sudah selesai -->
+                </div>
+            </div>
+            <div class="col-md-3"> <!-- Kolom kedua untuk statistik -->
+                <div class="dashboard-card p-4 stat-box">
+                    <h5 class="stat-title">Tugas Belum Selesai</h5> <!-- Judul statistik -->
+                    <p class="stat-number">3</p> <!-- Menampilkan jumlah tugas yang belum selesai -->
+                </div>
+            </div>
+            <div class="col-md-3"> <!-- Kolom ketiga untuk statistik -->
+                <div class="dashboard-card p-4 stat-box">
+                    <h5 class="stat-title">Total Jam Belajar</h5> <!-- Judul statistik -->
+                    <p class="stat-number">120 Jam</p> <!-- Menampilkan total jam belajar -->
+                </div>
+            </div>
+            <div class="col-md-3"> <!-- Kolom keempat untuk statistik -->
+                <div class="dashboard-card p-4 stat-box">
+                    <h5 class="stat-title">Ranking</h5> <!-- Judul statistik -->
+                    <p class="stat-number">#5</p> <!-- Menampilkan peringkat pengguna -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Grafik Progress -->
+        <div class="row mt-5">
+            <div class="col-md-8"> <!-- Kolom untuk grafik progress -->
+                <div class="dashboard-card p-4">
+                    <h4 class="mb-3">Progress Belajar Anda</h4> <!-- Judul untuk grafik -->
+                    <canvas id="progressChart" width="400" height="200"></canvas> <!-- Tempat untuk menggambar grafik dengan Chart.js -->
+                </div>
+            </div>
+
+            <!-- Kalender Kegiatan -->
+            <div class="col-md-4"> <!-- Kolom untuk kalender kegiatan -->
+                <div class="dashboard-card p-4">
+                    <h4 class="mb-3">Kalender Kegiatan</h4> <!-- Judul untuk kalender -->
+                    <div id="calendar" class="bg-light p-3 rounded"> <!-- Kontainer untuk kalender -->
+                        <ul class="list-group"> <!-- Daftar kegiatan -->
+                            <li class="list-group-item">10 Okt 2024 - Tugas 1</li> <!-- Item daftar kegiatan -->
+                            <li class="list-group-item">15 Okt 2024 - Tugas 2</li>
+                            <li class="list-group-item">20 Okt 2024 - Tugas 3</li>
+                            <li class="list-group-item">30 Okt 2024 - Ujian Akhir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daftar Pengumuman -->
+        <div class="row mt-5">
+            <div class="col-md-12"> <!-- Kolom untuk pengumuman terbaru -->
+                <div class="dashboard-card p-4">
+                    <h4 class="mb-3">Pengumuman Terbaru</h4> <!-- Judul untuk pengumuman -->
+                    <ul class="list-group"> <!-- Daftar pengumuman -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Pembukaan pendaftaran kursus baru untuk Frontend Development
+                            <span class="badge bg-info">12 Okt 2024</span> <!-- Tanggal pengumuman -->
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Update materi kursus Backend Development
+                            <span class="badge bg-info">8 Okt 2024</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Webinar eksklusif dengan pembicara tamu dari industri
+                            <span class="badge bg-info">5 Okt 2024</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Perubahan jadwal untuk ujian akhir
+                            <span class="badge bg-info">1 Okt 2024</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do List -->
+        <div class="row mt-5">
+            <div class="col-md-12"> <!-- Kolom untuk To-Do List -->
+                <div class="dashboard-card p-2">
+                    <h4 class="mb-3">To-Do List</h4> <!-- Judul untuk To-Do List -->
+                    <ul class="list-group"> <!-- Daftar item dalam To-Do List -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Selesaikan Tugas 1
+                            <span class="badge bg-danger">deadline hari ini</span> <!-- Badge untuk menunjukkan urgensi -->
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Review Materi HTML & CSS
+                            <span class="badge bg-primary">deadline 4 hari lagi</span> <!-- Badge menunjukkan sisa waktu -->
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Belajar Node.js Middleware
+                            <span class="badge bg-warning">deadline 2 hari lagi</span> <!-- Badge menunjukkan sisa waktu -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kursus Section -->
+    <div id="kursus" class="content-section hidden"> <!-- Bagian untuk menampilkan kursus pengguna -->
+        <h2 class="mb-4 text-center">Kursus Saya</h2> <!-- Judul bagian Kursus Saya -->
+
+        <div class="row"> <!-- Mulai baris untuk konten -->
+            <div class="col-md-12"> <!-- Kolom untuk daftar kursus -->
+                <div class="dashboard-card p-4"> <!-- Card untuk menampilkan daftar kursus -->
+                    <h4 class="mb-3">Daftar Kursus</h4> <!-- Judul untuk daftar kursus -->
+                    <div class="row"> <!-- Baris untuk menampung kursus -->
+                        <!-- Kursus 1 -->
+                        <div class="col-md-4 mb-4"> <!-- Kolom untuk kursus pertama -->
+                            <div class="dashboard-card p-3"> <!-- Card untuk kursus -->
+                                <div class="d-flex justify-content-between"> <!-- Flexbox untuk judul dan progress -->
+                                    <div>
+                                        <h5 class="card-title">HTML & CSS Mastery</h5> <!-- Judul kursus -->
+                                        <p class="text-muted">Level: Intermediate</p> <!-- Tingkat kesulitan kursus -->
+                                    </div>
+                                    <div class="circular-progress" data-percent="70"> <!-- Progress melingkar -->
+                                        <span>70%</span> <!-- Menampilkan persentase progress -->
+                                    </div>
+                                </div>
+                                <div class="progress my-2"> <!-- Bar untuk menampilkan progress -->
+                                    <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="small">Selesaikan 3 tugas lagi untuk mencapai 100%.</p> <!-- Informasi tambahan tentang tugas -->
+                                <button class="btn btn-primary btn-sm mb-1">Lihat Detail</button> <!-- Tombol untuk melihat detail kursus -->
+                                <button class="btn btn-secondary btn-sm">Ulangi Kursus</button> <!-- Tombol untuk mengulang kursus -->
+                            </div>
+                        </div>
+
+                        <!-- Kursus 2 -->
+                        <div class="col-md-4 mb-4"> <!-- Kolom untuk kursus kedua -->
+                            <div class="dashboard-card p-3"> <!-- Card untuk kursus -->
+                                <div class="d-flex justify-content-between"> <!-- Flexbox untuk judul dan progress -->
+                                    <div>
+                                        <h5 class="card-title">JavaScript Essentials</h5> <!-- Judul kursus -->
+                                        <p class="text-muted">Level: Beginner</p> <!-- Tingkat kesulitan kursus -->
+                                    </div>
+                                    <div class="circular-progress" data-percent="50"> <!-- Progress melingkar -->
+                                        <span>50%</span> <!-- Menampilkan persentase progress -->
+                                    </div>
+                                </div>
+                                <div class="progress my-2"> <!-- Bar untuk menampilkan progress -->
+                                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="small">Selesaikan modul JavaScript DOM untuk mencapai 60%.</p> <!-- Informasi tambahan tentang tugas -->
+                                <button class="btn btn-primary btn-sm mb-1">Lihat Detail</button> <!-- Tombol untuk melihat detail kursus -->
+                                <button class="btn btn-secondary btn-sm">Ulangi Kursus</button> <!-- Tombol untuk mengulang kursus -->
+                            </div>
+                        </div>
+
+                        <!-- Kursus 3 -->
+                        <div class="col-md-4 mb-4"> <!-- Kolom untuk kursus ketiga -->
+                            <div class="dashboard-card p-3"> <!-- Card untuk kursus -->
+                                <div class="d-flex justify-content-between"> <!-- Flexbox untuk judul dan progress -->
+                                    <div>
+                                        <h5 class="card-title">Backend with Node.js</h5> <!-- Judul kursus -->
+                                        <p class="text-muted">Level: Advanced</p> <!-- Tingkat kesulitan kursus -->
+                                    </div>
+                                    <div class="circular-progress" data-percent="90"> <!-- Progress melingkar -->
+                                        <span>90%</span> <!-- Menampilkan persentase progress -->
+                                    </div>
+                                </div>
+                                <div class="progress my-2"> <!-- Bar untuk menampilkan progress -->
+                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="small">Selesaikan tugas akhir untuk menyelesaikan kursus ini.</p> <!-- Informasi tambahan tentang tugas -->
+                                <button class="btn btn-primary btn-sm mb-1">Lihat Detail</button> <!-- Tombol untuk melihat detail kursus -->
+                                <button class="btn btn-secondary btn-sm">Ulangi Kursus</button> <!-- Tombol untuk mengulang kursus -->
+                            </div>
+                        </div>
+
+                        <!-- Kursus 4 -->
+                        <div class="col-md-4 mb-4"> <!-- Kolom untuk kursus keempat -->
+                            <div class="dashboard-card p-3"> <!-- Card untuk kursus -->
+                                <div class="d-flex justify-content-between"> <!-- Flexbox untuk judul dan progress -->
+                                    <div>
+                                        <h5 class="card-title">Database Design</h5> <!-- Judul kursus -->
+                                        <p class="text-muted">Level: Beginner</p> <!-- Tingkat kesulitan kursus -->
+                                    </div>
+                                    <div class="circular-progress" data-percent="30"> <!-- Progress melingkar -->
+                                        <span>30%</span> <!-- Menampilkan persentase progress -->
+                                    </div>
+                                </div>
+                                <div class="progress my-2"> <!-- Bar untuk menampilkan progress -->
+                                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="small">Selesaikan modul tentang relational database untuk mencapai 50%.</p> <!-- Informasi tambahan tentang tugas -->
+                                <button class="btn btn-primary btn-sm mb-1">Lihat Detail</button> <!-- Tombol untuk melihat detail kursus -->
+                                <button class="btn btn-secondary btn-sm">Ulangi Kursus</button> <!-- Tombol untuk mengulang kursus -->
+                            </div>
+                        </div>
+
+                        <!-- Kursus 5 -->
+                        <div class="col-md-4 mb-4"> <!-- Kolom untuk kursus kelima -->
+                            <div class="dashboard-card p-3"> <!-- Card untuk kursus -->
+                                <div class="d-flex justify-content-between"> <!-- Flexbox untuk judul dan progress -->
+                                    <div>
+                                        <h5 class="card-title">React.js Basics</h5> <!-- Judul kursus -->
+                                        <p class="text-muted">Level: Intermediate</p> <!-- Tingkat kesulitan kursus -->
+                                    </div>
+                                    <div class="circular-progress" data-percent="60"> <!-- Progress melingkar -->
+                                        <span>60%</span> <!-- Menampilkan persentase progress -->
+                                    </div>
+                                </div>
+                                <div class="progress my-2"> <!-- Bar untuk menampilkan progress -->
+                                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="small">Selesaikan modul JSX dan State Management untuk mencapai 80%.</p> <!-- Informasi tambahan tentang tugas -->
+                                <button class="btn btn-primary btn-sm mb-1">Lihat Detail</button> <!-- Tombol untuk melihat detail kursus -->
+                                <button class="btn btn-secondary btn-sm">Ulangi Kursus</button> <!-- Tombol untuk mengulang kursus -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tugas Berulang -->
+                <div class="col-md-10 mb-4">
+                    <div class="dashboard-card p-2">
+                        <h4 class="mb-3">Tugas Berulang</h4> <!-- Judul untuk tugas berulang -->
+                        <ul class="list-group"> <!-- Daftar tugas berulang -->
+                            <li class="list-group-item">
+                                <strong>Belajar Node.js</strong> - Setiap Minggu <!-- Tugas yang harus dilakukan setiap minggu -->
+                                <span class="badge bg-info float-end">Weekly</span> <!-- Badge yang menunjukkan frekuensi tugas -->
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Review Materi</strong> - Setiap Hari <!-- Tugas yang harus dilakukan setiap hari -->
+                                <span class="badge bg-info float-end">Daily</span> <!-- Badge yang menunjukkan frekuensi tugas -->
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Tugas Mingguan</strong> - Setiap Jumat <!-- Tugas yang harus diselesaikan setiap minggu -->
+                                <span class="badge bg-info float-end">Weekly</span> <!-- Badge yang menunjukkan frekuensi tugas -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kalendar Kegiatan -->
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="dashboard-card p-4">
+                        <h4 class="mb-3">Kalender Kegiatan</h4> <!-- Judul untuk kalender -->
+                        <div id="calendar" class="bg-light p-3 rounded"> <!-- Kontainer untuk kalender -->
+                            <ul class="list-group"> <!-- Daftar kegiatan -->
+                                <li class="list-group-item">10 Okt 2024 - Tugas 1</li> <!-- Item daftar kegiatan -->
+                                <li class="list-group-item">15 Okt 2024 - Tugas 2</li>
+                                <li class="list-group-item">20 Okt 2024 - Tugas 3</li>
+                                <li class="list-group-item">30 Okt 2024 - Ujian Akhir</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Tugas Modal -->
+            <div class="modal fade" id="taskDetailModal" tabindex="-1" aria-labelledby="taskDetailModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="taskDetailModalLabel">Detail Tugas</h5> <!-- Judul modal untuk detail tugas -->
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Tombol untuk menutup modal -->
+                        </div>
+                        <div class="modal-body" id="taskDetailContent">
+                            <!-- Konten akan diisi dengan JavaScript -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> <!-- Tombol untuk menutup modal -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    <!-- Tugas Section -->
+    <div id="tugas" class="content-section hidden"> <!-- Bagian untuk menampilkan tugas pengguna -->
+        <h2 class="mb-4 text-center">Tugas Saya</h2> <!-- Judul utama untuk bagian Tugas Saya -->
+        <p style="font-weight: bold;">Ket:</p>
+        <th> &ensp;
+            <td>Selesai : 
+                <span class="badge bg-success">S</span> <!-- Status tugas, menunjukkan tugas telah selesai -->
+            </td> &ensp;
+            <td>Dalam Proses :
+                <span class="badge bg-warning">P</span> <!-- Status tugas, menunjukkan tugas sedang dikerjakan -->
+            </td>&ensp;
+            <td>Belum Dimulai :
+                <span class="badge bg-danger">M</span> <!-- Status tugas, menunjukkan tugas belum dikerjakan -->
+            </td>
+        </th>
+        <br><br>
+        <div class="row"> <!-- Mulai baris untuk konten -->
+            <div class="col-md-8"> <!-- Kolom untuk daftar tugas -->
+                <div class="dashboard-card p-1"> <!-- Card untuk menampilkan daftar tugas -->
+                    <h4 class="mb-3">Daftar Tugas</h4> <!-- Judul untuk daftar tugas -->
+                    <table class="table table-striped"> <!-- Tabel untuk menampilkan daftar tugas dengan gaya strip -->
+                        <thead>
+                            <tr> <!-- Header tabel -->
+                                <th>Nama Tugas</th> <!-- Kolom untuk nama tugas -->
+                                <th>Status</th> <!-- Kolom untuk status tugas -->
+                                <th>Deadline</th> <!-- Kolom untuk tenggat waktu tugas -->
+                                <th>Aksi</th> <!-- Kolom untuk aksi yang bisa diambil -->
+                            </tr>
+                        </thead>
+                        <tbody id="taskList"> <!-- Bagian tubuh tabel untuk daftar tugas, ID digunakan untuk manipulasi JavaScript -->
+                            <!-- Tugas 1 -->
+                            <tr> <!-- Baris untuk tugas pertama -->
+                                <td>
+                                    <h5 class="card-title">Tugas 1: HTML & CSS Project</h5> <!-- Judul tugas -->
+                                    <p class="small text-muted">Deskripsi: Buat halaman web menggunakan HTML dan CSS.</p> <!-- Deskripsi tugas -->
+                                </td>
+                                <td>
+                                    <span class="badge bg-success">S</span> <!-- Status tugas, menunjukkan tugas telah selesai -->
+                                    <i class="bi bi-check-circle-fill text-success"></i> <!-- Ikon cek untuk menunjukkan status selesai -->
+                                </td>
+                                <td><strong>10 Okt 2024</strong></td> <!-- Tenggat waktu tugas -->
+                                <td>
+                                    <button class="btn btn-primary btn-sm mb-1" onclick="showTaskDetail(1)">Detail</button> <!-- Tombol untuk melihat detail tugas -->
+                                    <button class="btn btn-secondary btn-sm" onclick="editTask(1)">Edit</button> <!-- Tombol untuk mengedit tugas -->
+                                </td>
+                            </tr>
+
+                            <!-- Tugas 2 -->
+                            <tr> <!-- Baris untuk tugas kedua -->
+                                <td>
+                                    <h5 class="card-title">Tugas 2: JavaScript Basics</h5> <!-- Judul tugas -->
+                                    <p class="small text-muted">Deskripsi: Pelajari dasar-dasar JavaScript dan buat aplikasi sederhana.</p> <!-- Deskripsi tugas -->
+                                </td>
+                                <td>
+                                    <span class="badge bg-warning">P</span> <!-- Status tugas, menunjukkan tugas sedang dikerjakan -->
+                                    <i class="bi bi-hourglass-split text-warning"></i> <!-- Ikon jam pasir untuk menunjukkan status dalam proses -->
+                                </td>
+                                <td><strong>15 Okt 2024</strong></td> <!-- Tenggat waktu tugas -->
+                                <td>
+                                    <button class="btn btn-primary btn-sm mb-1" onclick="showTaskDetail(2)">Detail</button> <!-- Tombol untuk melihat detail tugas -->
+                                    <button class="btn btn-secondary btn-sm" onclick="editTask(2)">Edit</button> <!-- Tombol untuk mengedit tugas -->
+                                </td>
+                            </tr>
+
+                            <!-- Tugas 3 -->
+                            <tr> <!-- Baris untuk tugas ketiga -->
+                                <td>
+                                    <h5 class="card-title">Tugas 3: Node.js Server Setup</h5> <!-- Judul tugas -->
+                                    <p class="small text-muted">Deskripsi: Siapkan server menggunakan Node.js dan Express.</p> <!-- Deskripsi tugas -->
+                                </td>
+                                <td>
+                                    <span class="badge bg-danger">M</span> <!-- Status tugas, menunjukkan tugas belum dikerjakan -->
+                                    <i class="bi bi-x-circle-fill text-danger"></i> <!-- Ikon silang untuk menunjukkan status belum dimulai -->
+                                </td>
+                                <td><strong>20 Okt 2024</strong></td> <!-- Tenggat waktu tugas -->
+                                <td>
+                                    <button class="btn btn-primary btn-sm mb-1" onclick="showTaskDetail(3)">Detail</button> <!-- Tombol untuk melihat detail tugas -->
+                                    <button class="btn btn-secondary btn-sm" onclick="editTask(3)">Edit</button> <!-- Tombol untuk mengedit tugas -->
+                                </td>
+                            </tr>
+
+                            <!-- Tugas 4 -->
+                            <tr> <!-- Baris untuk tugas keempat -->
+                                <td>
+                                    <h5 class="card-title">Tugas 4: React.js Components</h5> <!-- Judul tugas -->
+                                    <p class="small text-muted">Deskripsi: Bangun komponen dengan React.js dan integrasikan API.</p> <!-- Deskripsi tugas -->
+                                </td>
+                                <td>
+                                    <span class="badge bg-warning">P</span> <!-- Status tugas, menunjukkan tugas sedang dikerjakan -->
+                                    <i class="bi bi-hourglass-split text-warning"></i> <!-- Ikon jam pasir untuk menunjukkan status dalam proses -->
+                                </td>
+                                <td><strong>25 Okt 2024</strong></td> <!-- Tenggat waktu tugas -->
+                                <td>
+                                    <button class="btn btn-primary btn-sm mb-1" onclick="showTaskDetail(4)">Detail</button> <!-- Tombol untuk melihat detail tugas -->
+                                    <button class="btn btn-secondary btn-sm" onclick="editTask(4)">Edit</button> <!-- Tombol untuk mengedit tugas -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tugas Berulang -->
+            <div class="col-md-4 mb-4"> <!-- Kolom untuk tugas berulang -->
+                <div class="dashboard-card p-4">
+                    <h4 class="mb-3">Tugas Berulang</h4> <!-- Judul untuk tugas berulang -->
+                    <ul class="list-group"> <!-- Daftar tugas berulang -->
+                        <li class="list-group-item">
+                            <strong>Belajar Node.js</strong> - Setiap Minggu <!-- Tugas yang harus dilakukan setiap minggu -->
+                            <span class="badge bg-info float-end">Weekly</span> <!-- Badge yang menunjukkan frekuensi tugas -->
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Review Materi</strong> - Setiap Hari <!-- Tugas yang harus dilakukan setiap hari -->
+                            <span class="badge bg-info float-end">Daily</span> <!-- Badge yang menunjukkan frekuensi tugas -->
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Tugas Mingguan</strong> - Setiap Jumat <!-- Tugas yang harus diselesaikan setiap minggu -->
+                            <span class="badge bg-info float-end">Weekly</span> <!-- Badge yang menunjukkan frekuensi tugas -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kalendar Kegiatan -->
+        <div class="row mt-5">
+            <div class="col-md-12"> <!-- Kolom untuk kalender kegiatan -->
+                <div class="dashboard-card p-4">
+                    <h4 class="mb-3">Kalender Kegiatan</h4> <!-- Judul untuk kalender -->
+                    <div id="calendar" class="bg-light p-3 rounded"> <!-- Kontainer untuk kalender -->
+                        <ul class="list-group"> <!-- Daftar kegiatan -->
+                            <li class="list-group-item">10 Okt 2024 - Tugas 1</li> <!-- Item daftar kegiatan -->
+                            <li class="list-group-item">15 Okt 2024 - Tugas 2</li>
+                            <li class="list-group-item">20 Okt 2024 - Tugas 3</li>
+                            <li class="list-group-item">30 Okt 2024 - Ujian Akhir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Tugas Modal -->
+        <div class="modal fade" id="taskDetailModal" tabindex="-1" aria-labelledby="taskDetailModalLabel" aria-hidden="true">
+            <div class="modal-dialog"> <!-- Dialog modal untuk detail tugas -->
+                <div class="modal-content">
+                    <div class="modal-header"> <!-- Bagian header modal -->
+                        <h5 class="modal-title" id="taskDetailModalLabel">Detail Tugas</h5> <!-- Judul modal untuk detail tugas -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Tombol untuk menutup modal -->
+                    </div>
+                    <div class="modal-body" id="taskDetailContent">
+                        <!-- Konten akan diisi dengan JavaScript -->
+                    </div>
+                    <div class="modal-footer"> <!-- Bagian footer modal -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> <!-- Tombol untuk menutup modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profil Section -->
+    <div id="profil" class="content-section hidden"> <!-- Bagian untuk menampilkan profil pengguna -->
+        <h2 class="mb-4 text-center">Profil Saya</h2> <!-- Judul utama untuk bagian Profil Saya -->
+
+        <div class="row"> <!-- Mulai baris untuk konten -->
+            <!-- Detail Profil -->
+            <div class="col-md-4 mb-4"> <!-- Kolom untuk detail profil pengguna -->
+                <div class="dashboard-card p-4 text-center"> <!-- Card untuk menampilkan informasi profil -->
+                    <img src="profil/Foto Pass Beralmet BSI.jpg" class="rounded-circle mb-3" alt="Profile Picture" style="width: 150px; height: 150px; border: 5px solid #3FA3CE;"> <!-- Gambar profil pengguna -->
+                    <h4>Yohanes Serpiyanto Elo</h4> <!-- Nama pengguna -->
+                    <p class="text-muted">Full Stack Developer</p> <!-- Jabatan atau posisi pengguna -->
+                    <p class="small">Email: ertoello17fx@gmail.com</p> <!-- Email pengguna -->
+                    <p class="small">No. Telepon: +62 881-0109-30936</p> <!-- Nomor telepon pengguna -->
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profil</button> <!-- Tombol untuk membuka modal edit profil -->
+                </div>
+            </div>
+
+            <!-- Informasi Tambahan -->
+            <div class="col-md-8"> <!-- Kolom untuk informasi tambahan tentang pengguna -->
+                <div class="dashboard-card p-4"> <!-- Card untuk informasi tambahan -->
+                    <h4>Informasi Tambahan</h4> <!-- Judul untuk informasi tambahan -->
+                    <p><strong>Bio: &nbsp;</strong>Hallo, Saya erto. Saya berasal dari Flores,NTT. Saya tinggal di Bekasi dari tahun 2021-Sekarang. Saya seorang mahasiswa semester 6 di kampus favorit saya Universitas Bina Sarana Informatika. Saya seorang mahasiswa yang bersemangat dalam dunia pemrograman web dan teknologi. Saya menjelajahi kompleksitas kode dan merangkai kreativitas dalam menciptakan pengalaman online yang menarik dan fungsional. Dari HTML hingga JavaScript, saya terus belajar dan mengasah keterampilan saya dalam mengembangkan aplikasi web yang inovatif.</p>
+                    <!-- Bio pengguna yang menjelaskan latar belakang dan minat -->
+                    
+                    <h5>Riwayat Aktivitas</h5> <!-- Judul untuk riwayat aktivitas -->
+                    <div class="timeline"> <!-- Kontainer untuk menampilkan riwayat aktivitas dalam format timeline -->
+                        <div class="timeline-item"> <!-- Item timeline pertama -->
+                            <span class="timeline-date">10 Okt 2024</span> <!-- Tanggal aktivitas -->
+                            <p class="timeline-content">Menyelesaikan Tugas 1: HTML & CSS Project.</p> <!-- Konten aktivitas -->
+                        </div>
+                        <div class="timeline-item"> <!-- Item timeline kedua -->
+                            <span class="timeline-date">15 Okt 2024</span>
+                            <p class="timeline-content">Mengumpulkan Tugas 2: JavaScript Basics.</p>
+                        </div>
+                        <div class="timeline-item"> <!-- Item timeline ketiga -->
+                            <span class="timeline-date">20 Okt 2024</span>
+                            <p class="timeline-content">Membuat 3 proyek dalam Node.js.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pengaturan Notifikasi -->
+        <div class="row mt-5"> <!-- Mulai baris untuk pengaturan notifikasi -->
+            <div class="col-md-12"> <!-- Kolom untuk pengaturan notifikasi -->
+                <div class="dashboard-card p-4"> <!-- Card untuk pengaturan notifikasi -->
+                    <h4>Pengaturan Notifikasi</h4> <!-- Judul untuk pengaturan notifikasi -->
+                    <div class="form-check"> <!-- Checkbox untuk notifikasi email -->
+                        <input class="form-check-input" type="checkbox" id="emailNotifications" checked> <!-- Checkbox untuk notifikasi email -->
+                        <label class="form-check-label" for="emailNotifications">Notifikasi melalui email</label> <!-- Label untuk checkbox -->
+                    </div>
+                    <div class="form-check"> <!-- Checkbox untuk notifikasi SMS -->
+                        <input class="form-check-input" type="checkbox" id="smsNotifications"> <!-- Checkbox untuk notifikasi SMS -->
+                        <label class="form-check-label" for="smsNotifications">Notifikasi melalui SMS</label> <!-- Label untuk checkbox -->
+                    </div>
+                    <div class="form-check"> <!-- Checkbox untuk notifikasi aplikasi -->
+                        <input class="form-check-input" type="checkbox" id="pushNotifications"> <!-- Checkbox untuk notifikasi aplikasi -->
+                        <label class="form-check-label" for="pushNotifications">Notifikasi melalui aplikasi</label> <!-- Label untuk checkbox -->
+                    </div>
+                    <button type="button" class="btn btn-success mt-3">Simpan Pengaturan</button> <!-- Tombol untuk menyimpan pengaturan notifikasi -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Profil Modal -->
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true"> <!-- Modal untuk edit profil -->
+            <div class="modal-dialog modal-lg"> <!-- Dialog modal dengan ukuran besar -->
+                <div class="modal-content"> <!-- Konten modal -->
+                    <div class="modal-header"> <!-- Bagian header modal -->
+                        <h5 class="modal-title" id="editProfileModalLabel">Edit Profil</h5> <!-- Judul modal untuk edit profil -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Tombol untuk menutup modal -->
+                    </div>
+                    <div class="modal-body"> <!-- Bagian tubuh modal -->
+                        <form> <!-- Form untuk edit profil -->
+                            <div class="mb-3"> <!-- Input untuk nama lengkap -->
+                                <label for="name" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="name" value="Yohanes Serpiyanto Elo"> <!-- Field input untuk nama lengkap -->
+                            </div>
+                            <div class="mb-3"> <!-- Input untuk email -->
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" value="ertoello17fx@gmail.com"> <!-- Field input untuk email -->
+                            </div>
+                            <div class="mb-3"> <!-- Input untuk nomor telepon -->
+                                <label for="phone" class="form-label">No. Telepon</label>
+                                <input type="tel" class="form-control" id="phone" value="+62 881-0109-30936"> <!-- Field input untuk nomor telepon -->
+                            </div>
+                            <div class="mb-3"> <!-- Input untuk bio -->
+                                <label for="bio" class="form-label">Bio</label>
+                                <textarea class="form-control" id="bio" rows="3">Hallo, Saya erto. Saya berasal dari Flores,NTT. Saya tinggal di Bekasi dari tahun 2021-Sekarang. Saya seorang mahasiswa semester 6 di kampus favorit saya Universitas Bina Sarana Informatika. Saya seorang mahasiswa yang bersemangat dalam dunia pemrograman web dan teknologi. Saya menjelajahi kompleksitas kode dan merangkai kreativitas dalam menciptakan pengalaman online yang menarik dan fungsional. Dari HTML hingga JavaScript, saya terus belajar dan mengasah keterampilan saya dalam mengembangkan aplikasi web yang inovatif.</textarea> <!-- Field textarea untuk bio -->
+                            </div>
+                            <div class="mb-3"> <!-- Input untuk foto profil -->
+                                <label for="profilePicture" class="form-label">Foto Profil</label>
+                                <input class="form-control" type="file" id="profilePicture"> <!-- Field input untuk memilih foto profil -->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer"> <!-- Bagian footer modal -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> <!-- Tombol untuk menutup modal -->
+                        <button type="button" class="btn btn-primary">Simpan Perubahan</button> <!-- Tombol untuk menyimpan perubahan profil -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="pendidikan.js"></script>
+</body>
+</html>
