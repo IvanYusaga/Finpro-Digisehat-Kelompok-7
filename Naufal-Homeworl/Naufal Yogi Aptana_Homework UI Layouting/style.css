@@ -1,0 +1,226 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #00509e;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.main-content h1 {
+  margin-bottom: 20px;
+}
+
+/* Grid Container Styles */
+.container,
+.course-container,
+.tasks-container {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.course-container,
+.tasks-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Card Styles */
+.card,
+.course-item,
+.task-item {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-item h2,
+.task-item h2 {
+  margin-bottom: 10px;
+}
+
+.course-item p,
+.task-item p {
+  margin-bottom: 10px;
+}
+
+/* Progress Bar Styles */
+progress {
+  width: 100%;
+  height: 20px;
+}
+
+/* Button Styles */
+button,
+.save-button {
+  margin-top: 10px;
+  background-color: #00509e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+.save-button:hover {
+  background-color: #003366;
+}
+
+button.disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+/* Status Styles */
+.status {
+  font-weight: bold;
+}
+
+.status.pending {
+  color: red;
+}
+
+.status.progress {
+  color: orange;
+}
+
+.status.completed {
+  color: green;
+}
+
+/* Schedule Styles */
+.schedule-column {
+  width: 100%;
+}
+
+.schedule-column h1 {
+  margin-bottom: 20px;
+}
+
+.schedule-column input,
+.schedule-column select,
+.update-account input,
+.update-account select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.schedule-table th {
+  background-color: #003366;
+  color: white;
+}
+
+/* Account Info Styles */
+.account-info,
+.update-account {
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.account-info h2,
+.update-account h2 {
+  margin-bottom: 20px;
+}
+
+/* Profile Styles */
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+/* File Upload Styles */
+.file-label {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #00509e;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: #003366;
+}
