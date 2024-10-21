@@ -47,3 +47,11 @@ Back End Developer
 
 ---
 
+Yohanes Serpiyanto Elo
+Teknologi Informasi
+Universitas Bina Sarana Informatika
+Angkatan 2021
+Front End Development
+
+---
+
