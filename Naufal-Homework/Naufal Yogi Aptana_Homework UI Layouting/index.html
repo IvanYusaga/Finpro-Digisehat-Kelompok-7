@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Siswa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-lg bg-body-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">E-Learning</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Learning Path</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Langganan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Program</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Lainnya
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Challenge</a></li>
+                <li><a class="dropdown-item" href="#">Event</a></li>
+                <li><a class="dropdown-item" href="#">Reward</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="d-flex align-items-start mt-2">
+      <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+          type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+        <button class="nav-link" id="v-pills-course-tab" data-bs-toggle="pill" data-bs-target="#v-pills-course"
+          type="button" role="tab" aria-controls="v-pills-course" aria-selected="false">Course</button>
+        <button class="nav-link" id="v-pills-tasks-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tasks"
+          type="button" role="tab" aria-controls="v-pills-tasks" aria-selected="false">Tasks</button>
+        <button class="nav-link" id="v-pills-schedule-tab" data-bs-toggle="pill" data-bs-target="#v-pills-schedule"
+          type="button" role="tab" aria-controls="v-pills-schedule" aria-selected="false">Schedule</button>
+        <button class="nav-link" id="v-pills-exam-account" data-bs-toggle="pill" data-bs-target="#v-pills-account"
+          type="button" role="tab" aria-controls="v-pills-account" aria-selected="false">Account</button>
+        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+          type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+      </div>
+
+      <div class="tab-content" id="v-pills-tabContent">
+
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+          tabindex="0">
+
+          <div class="main-content">
+            <h1>Selamat Datang di Dashboard Siswa</h1>
+
+            <div class="container">
+              <div class="card">
+                <h3>Kursus yang Diikuti</h3>
+                <div class="course">
+                  <span>Matematika Dasar</span>
+                  <progress value="75" max="100"></progress>
+                  <span>75% Selesai</span>
+                  <button>Lanjutkan</button>
+                </div>
+                <div class="course">
+                  <span>Bahasa Inggris</span>
+                  <progress value="60" max="100"></progress>
+                  <span>60% Selesai</span>
+                  <button>Lanjutkan</button>
+                </div>
+                <div class="course">
+                  <span>Pemrograman Web</span>
+                  <progress value="40" max="100"></progress>
+                  <span>40% Selesai</span>
+                  <button>Lanjutkan</button>
+                </div>
+                <button>Lihat Semua Kursus</button>
+              </div>
+
+              <div class="card">
+                <h3>Tugas Mendatang</h3>
+                <ul>
+                  <li>Quiz Matematika <span class="due">2 hari lagi</span></li>
+                  <li>Presentasi Bahasa Inggris <span class="due">4 hari lagi</span></li>
+                  <li>Project Web <span class="due">1 minggu lagi</span></li>
+                </ul>
+                <button>Lihat Semua Tugas</button>
+              </div>
+
+              <div class="card">
+                <h3>Jadwal Hari Ini</h3>
+                <ul>
+                  <li>08:00 - 09:30 <span>Kelas Matematika</span></li>
+                  <li>10:00 - 11:30 <span>Kelas Bahasa Inggris</span></li>
+                  <li>13:00 - 14:30 <span>Lab Pemrograman</span></li>
+                </ul>
+                <button>Lihat Jadwal Lengkap</button>
+              </div>
+
+              <div class="card">
+                <h3>Performa Akademik</h3>
+                <p>IPK Semester Ini: <strong>3.75</strong></p>
+                <p>Peringkat Kelas: <strong>5 dari 30</strong></p>
+                <p>Kehadiran: <strong>90%</strong></p>
+              </div>
+
+              <div class="card">
+                <h3>Pengumuman</h3>
+                <p>Ujian Tengah Semester akan dilaksanakan mulai tanggal 15 Oktober. Pastikan untuk memeriksa jadwal
+                  ujian Anda.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-course" role="tabpanel" aria-labelledby="v-pills-course-tab"
+          tabindex="0">
+
+          <div class="main-content">
+            <h1>Kursus yang Diikuti</h1>
+
+            <div class="course-container">
+              <div class="course-item">
+                <h2>Matematika Dasar</h2>
+                <p>Deskripsi: Kursus ini mencakup topik dasar dalam matematika seperti aljabar, geometri, dan kalkulus
+                  dasar.</p>
+                <progress value="75" max="100"></progress>
+                <p>Progres: 75%</p>
+                <button>Lanjutkan</button>
+              </div>
+
+              <div class="course-item">
+                <h2>Bahasa Inggris</h2>
+                <p>Deskripsi: Kursus ini membantu siswa untuk meningkatkan kemampuan berbahasa Inggris dalam aspek
+                  membaca, menulis, dan berbicara.</p>
+                <progress value="60" max="100"></progress>
+                <p>Progres: 60%</p>
+                <button>Lanjutkan</button>
+              </div>
+
+              <div class="course-item">
+                <h2>Pemrograman Web</h2>
+                <p>Deskripsi: Kursus ini mengajarkan dasar-dasar pengembangan web, termasuk HTML, CSS, dan JavaScript.
+                </p>
+                <progress value="40" max="100"></progress>
+                <p>Progres: 40%</p>
+                <button>Lanjutkan</button>
+              </div>
+
+            </div>
+
+            <div class="available-courses mt-2">
+              <h2>Kursus yang Tersedia</h2>
+              <div class="course-item">
+                <h3>Fisika Dasar</h3>
+                <p>Deskripsi: Mempelajari hukum-hukum fisika klasik dan modern.</p>
+                <button>Daftar</button>
+              </div>
+
+              <div class="course-item">
+                <h3>Desain Grafis</h3>
+                <p>Deskripsi: Membuat desain visual menggunakan perangkat lunak grafis.</p>
+                <button>Daftar</button>
+              </div>
+
+              <div class="course-item">
+                <h3>Analisis Data</h3>
+                <p>Deskripsi: Pengenalan teknik-teknik analisis data dengan Python dan Excel.</p>
+                <button>Daftar</button>
+              </div>
+
+              <div class="course-item">
+                <h3>Pemrograman Python</h3>
+                <p>Deskripsi: Belajar pemrograman dasar menggunakan bahasa Python.</p>
+                <button>Daftar</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-tasks" role="tabpanel" aria-labelledby="v-pills-tasks-tab" tabindex="0">
+
+          <div class="main-content">
+            <h1>Tugas</h1>
+
+            <div class="filter-container">
+              <label for="search-tasks">Cari Tugas:</label>
+              <input type="text" id="search-tasks">
+            </div>
+
+            <div class="tasks-container mt-2">
+              <div class="task-item">
+                <h2>Quiz Matematika</h2>
+                <p>Tanggal Tenggat: 14 Oktober 2024</p>
+                <p>Status: <span class="status pending">Belum Dikerjakan</span></p>
+                <button>Kerjakan</button>
+              </div>
+
+              <div class="task-item">
+                <h2>Presentasi Bahasa Inggris</h2>
+                <p>Tanggal Tenggat: 16 Oktober 2024</p>
+                <p>Status: <span class="status pending">Belum Dikerjakan</span></p>
+                <button>Kerjakan</button>
+              </div>
+
+              <div class="task-item">
+                <h2>Project Pemrograman Web</h2>
+                <p>Tanggal Tenggat: 21 Oktober 2024</p>
+                <p>Status: <span class="status progress">Dalam Proses</span></p>
+                <button>Lanjutkan</button>
+              </div>
+
+              <div class="task-item">
+                <h2>Tugas Fisika Dasar</h2>
+                <p>Tanggal Tenggat: 25 Oktober 2024</p>
+                <p>Status: <span class="status completed">Selesai</span></p>
+                <button class="disabled" disabled>Telah Selesai</button>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-schedule" role="tabpanel" aria-labelledby="v-pills-schedule-tab"
+          tabindex="0">
+
+          <h1>Jadwal Keseluruhan</h1>
+
+          <!-- Pencarian Jadwal -->
+          <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Cari berdasarkan mata kuliah atau lokasi..."
+              onkeyup="searchSchedule()">
+          </div>
+
+          <!-- Filter Hari -->
+          <div class="filter-day">
+            <label for="filter">Filter Berdasarkan Hari: </label>
+            <select id="day-filter" onchange="filterSchedule()">
+              <option value="all">Semua Hari</option>
+              <option value="Senin">Senin</option>
+              <option value="Selasa">Selasa</option>
+              <option value="Rabu">Rabu</option>
+              <option value="Kamis">Kamis</option>
+              <option value="Jumat">Jumat</option>
+            </select>
+          </div>
+
+          <!-- Tabel Jadwal -->
+          <table class="schedule-table" id="schedule-table">
+            <thead>
+              <tr>
+                <th>Hari</th>
+                <th>Waktu</th>
+                <th>Mata Kuliah</th>
+                <th>Lokasi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-day="Senin">
+                <td>Senin</td>
+                <td>08:00 - 09:30</td>
+                <td>Kelas Matematika</td>
+                <td>Ruang 101</td>
+              </tr>
+              <tr data-day="Senin">
+                <td>Senin</td>
+                <td>10:00 - 11:30</td>
+                <td>Kelas Bahasa Inggris</td>
+                <td>Ruang 202</td>
+              </tr>
+              <tr data-day="Selasa">
+                <td>Selasa</td>
+                <td>08:00 - 09:30</td>
+                <td>Kelas Fisika</td>
+                <td>Ruang 301</td>
+              </tr>
+              <tr data-day="Rabu">
+                <td>Rabu</td>
+                <td>13:00 - 14:30</td>
+                <td>Lab Pemrograman</td>
+                <td>Lab Komputer</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="add-schedule mt-2">
+            <h2>Tambah Jadwal Baru</h2>
+            <label for="new-day">Hari:</label>
+            <select id="new-day">
+              <option value="Senin">Senin</option>
+              <option value="Selasa">Selasa</option>
+              <option value="Rabu">Rabu</option>
+              <option value="Kamis">Kamis</option>
+              <option value="Jumat">Jumat</option>
+            </select>
+
+            <label for="new-time">Waktu:</label>
+            <input type="text" id="new-time" placeholder="Contoh: 14:00 - 15:30">
+
+            <label for="new-course">Mata Kuliah:</label>
+            <input type="text" id="new-course" placeholder="Contoh: Kelas Kimia">
+
+            <label for="new-location">Lokasi:</label>
+            <input type="text" id="new-location" placeholder="Contoh: Ruang 303">
+
+            <button onclick="addSchedule()">Tambahkan Jadwal</button>
+          </div>
+
+          <script src="script.js"></script>
+
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab"
+          tabindex="0">
+
+          <h1>Akun Saya</h1>
+
+          <div class="account-info">
+            <h2>Informasi Akun</h2>
+            <div class="profile">
+              <img src="/asset/user.png" alt="Gambar Profil" class="profile-pic" id="profileImage">
+              <div class="profile-details">
+                <p><strong>Nama : </strong>Naufal Yogi Aptana</p>
+                <p><strong>Email : </strong>sinopal@gmail.com</p>
+                <p><strong>Jenis Kelamin : </strong>Laki-laki</p>
+                <p><strong>Tanggal Lahir : </strong>30 Mei 2003</p>
+                <input type="file" id="imageInput" accept="image/*" onchange="changeImage()">
+                <label for="imageInput" class="file-label">Ganti Gambar Profil</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="update-account">
+            <h2>Perbarui Informasi Akun</h2>
+            <input type="text" id="name" placeholder="Nama">
+            <input type="email" id="email" placeholder="Email">
+            <select id="gender" aria-placeholder="Jenis Kelamin">
+              <option value="male">Laki-laki</option>
+              <option value="female">Perempuan</option>
+            </select>
+            <input type="date" id="birthdate">
+            <button onclick="updateAccount()">Perbarui Akun</button>
+          </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+          tabindex="0">
+
+          <h1>Pengaturan</h1>
+
+          <div class="settings-section">
+            <h2>Tema</h2>
+            <select id="theme">
+              <option value="light">Terang</option>
+              <option value="dark">Gelap</option>
+            </select>
+          </div>
+
+          <div class="settings-section">
+            <h2>Bahasa</h2>
+            <select id="language">
+              <option value="id">Bahasa Indonesia</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
+          <button class="save-button" onclick="saveSettings()">Simpan Pengaturan</button>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center">
+    <p>&copy; 2023 Platform Pendidikan Online. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
